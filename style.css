@@ -9,7 +9,7 @@ html,body{
 .wraperlop {
     display: flex;
     flex-wrap: wrap;
-    /* position: fixed; */
+    position: fixed;
     width: 100%;
     height: 8%;
     background-color: #161b22;
