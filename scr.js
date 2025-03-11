@@ -17,21 +17,15 @@ function enableEditing(state) {
         td.contentEditable = state;
     });
 }
+
 function addStudent() {
     if (!editMode) return;
-    const table = document.getElementById("scoreTable").getElementsByTagName("tbody")[0];
+    const table = document. getElementsByTagName("tbody")[0];
     const row = table.insertRow();
-    row.innerHTML = `<td class="student-name" contenteditable="true">Tên mới</td>
-                     <td class="editable" contenteditable="true">0</td>
-                     <td class="editable" contenteditable="true">0</td>
-                     <td class="editable" contenteditable="true">0</td>
-                     <td class="editable" contenteditable="true">0</td>
-                     <td class="editable" contenteditable="true">0</td>
-                     <td class="editable" contenteditable="true">0</td>
-                     <td class="editable" contenteditable="true">0</td>
-                     <td class="editable" contenteditable="true">0</td>
-                     <td class="editable" contenteditable="true">0</td>`;
-
+    row.insertCell().outerHTML = `<td class="student-name" contenteditable="true">Tên mới</td>`;
+    for (let i = 0; i < 9; i++) {
+        row.insertCell().outerHTML = `<td class="editable" contenteditable="true">0</td>`;
+    }   
     const inputs1 = row.querySelectorAll(".editable");
     inputs1.forEach(input => {
         input.addEventListener("focus", function () { // focus: khi đang nhận thao tác
@@ -51,10 +45,34 @@ function addStudent() {
         });
     });
 }
+
 function saveData() {
     enableEditing(false);
     document.querySelectorAll(".student-name").forEach(td => {
         td.contentEditable = false;
     });
     editMode = false;
+}
+// mmm
+function change(){
+
+}
+function loadContent(file, event) {
+    event.preventDefault();
+    fetch(file)
+        .then(response => response.text()) // Đọc nội dung file con
+        .then(data => {
+            document.getElementById("score-container").innerHTML = data; // Chèn vào div
+            executeScripts(); // Chạy lại các script trong nội dung mới
+        })
+        .catch(error => console.error("Lỗi tải file:", error));
+}
+
+function executeScripts() {
+    document.querySelectorAll("#score-container script").forEach(oldScript => {
+        const newScript = document.createElement("script");
+        newScript.textContent = oldScript.textContent; // Chạy lại nội dung script
+        document.body.appendChild(newScript);
+        oldScript.remove();
+    });
 }
