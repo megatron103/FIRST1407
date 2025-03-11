@@ -27,22 +27,20 @@
             <div id="main_menu" >
                 <nav id="you">
                     <ul>
-                        <li><a >Maths</a></li>
-                        <li><a >Literature</a></li>
-                        <li><a >Physíc</a></li>
-                        <li><a >Chemistry</a></li>
-                        <li><a >Informatics</a></li>
+                        <li><a href="#" onclick="loadContent('math.html',event)">TOÁN</a></li>
+                        <li><a href="#" onclick="loadContent('literature.html',event)">NGỮ VĂN</a></li>
+                        <li><a href="#" onclick="loadContent('physic.html',event)">VẬT LÝ</a></li>
+                        <li><a href="#" onclick="loadContent('chemistry.html',event)">HÓA HỌC</a></li>
+                        <li><a href="#" onclick="loadContent('informatics.html',event)">TIN HỌC</a></li>
                     </ul>
                 </nav>
             </div> 
         </div> 
         <!-- uuu -->
         <div class="lop2">
-            <div>
-                
-            </div>
+            <div></div>
             <video id="video" autoplay muted loop playsinline>
-                <source src="hoathoaweb.mp4">
+                <source src="hoathoaa.mp4">
             </video>
             <!-- fff -->
         </div>
@@ -60,12 +58,12 @@
             </textarea>
         </form>
     </div>
-        <!-- fff -->
 
     <!-- mmm -->
     </br></br>
-    <div class="bangdiem">
-        <h3> ĐIỂM TỔNG KẾT</h3>
+   <div id="score-container">
+     <h3> ĐIỂM TOÁN</h3>
+       
         <hr style="width: 50%;height: 3px; background-color: rgb(218, 193, 242);
         border-radius:10px;"> </br></br>
         <table id="scoreTable">
@@ -98,13 +96,12 @@
                     <td contenteditable="false" class="editable">9.9</td>
                 </tr>
             </tbody>   
-            <!-- fff -->
+        <!-- fff -->
         </table>
-        <button id="Save" class="hidden" onclick="saveData()">SAVE</button>
     </div>
+    <button id="Save" class="hidden" onclick="saveData()">SAVE</button>
+    </br></br>
     <!-- mmm -->
-    <div class="delamgi">
-
-    </div>
+    <div class="delamgi"></div>
 </body>
 </html>
