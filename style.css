@@ -7,12 +7,12 @@ html,body{
 }
 /* mmm */
 .wraperlop {
-    top:0;
     display: flex;
     flex-wrap: wrap;
     position: fixed;
     width: 100%;
     height: 8%;
+    top: 0;
     background-color: #161b22;
 }
 /* fff */
@@ -87,7 +87,7 @@ html,body{
 .wraperlop .lop2 {
     display: flex;
     width: 45%;
-    gap: 75%;
+    gap: 80%;
     background-color: #161b22; 
     border-bottom: 1px solid#30363d ;
 }
@@ -138,20 +138,24 @@ button:active {
     display:  none; 
 }
 /* mmm */
-.bangdiem{
+#score-container{
+    width: 90%;
+    height: 60%;
+    justify-self: center;
+    border: 1px solid #00FF00;
+}
+#score-container, #score-table{
     overflow-y: auto;
-    background-color:  #22272e;
+    background-color: #22272e;
     border: 1px solid #00FF00;
     align-items: center;
     max-height:70%;
-    height: 60%;
-    width:90% ;
-    justify-self: center;
+    width:100% ;
     padding-bottom: 35px;
     border-radius: 5px;
 }
-.bangdiem h3{
-    color: rgb(253, 173, 240);
+h3{
+    color: rgb(253, 173, 240) ;
     text-align: center;
     padding-top: 20px;
 }
