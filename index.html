@@ -37,8 +37,9 @@
             </div> 
         </div> 
         <!-- uuu -->
-        <div class="lop2">
-            <div></div>
+        <div class="lop2">       
+            <div id="info-box">
+            </div>
             <video id="video" autoplay muted loop playsinline>
                 <source src="hoathoaweb.mp4">
             </video>
@@ -62,20 +63,18 @@
     <!-- mmm -->
     </br></br>
    <div id="score-container">
-     <h3> ĐIỂM TOÁN</h3>
-       
+     <h3> ĐIỂM TOÁN</h3>      
         <hr style="width: 50%;height: 3px; background-color: rgb(218, 193, 242);
         border-radius:10px;"> </br></br>
         <table id="scoreTable">
             <thead>
                 <tr>
+                    <th>STT</th>
                     <th class="student-name">TÊN HỌC SINH</th>
                     <th>TX1</th>
                     <th>TX2</th>
                     <th>TX3</th>
                     <th>TX4</th>
-                    <th>GK1</th>
-                    <th>CK1</th>
                     <th>GK2</th>
                     <th>CK2</th>
                     <th>TK</th>
@@ -84,11 +83,10 @@
             <!-- fff -->
             <tbody>
                 <tr>
-                    <td>NOIR-1407</td>
+                    <td>1</td>
+                    <td id="ten">NOIR-1407</td>
                     <td contenteditable="false" class="editable">9.9</td>
                     <td contenteditable="false" class="editable">9.9</td>  
-                    <td contenteditable="false" class="editable">9.9</td>
-                    <td contenteditable="false" class="editable">9.9</td>
                     <td contenteditable="false" class="editable">9.9</td>
                     <td contenteditable="false" class="editable">9.9</td>
                     <td contenteditable="false" class="editable">9.9</td>
@@ -102,6 +100,8 @@
     <button id="Save" class="hidden" onclick="saveData()">SAVE</button>
     </br></br>
     <!-- mmm -->
-    <div class="delamgi"></div>
+    <div class="delamgi">
+       
+    </div>
 </body>
 </html>
