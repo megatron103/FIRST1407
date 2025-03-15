@@ -20,12 +20,19 @@ function enableEditing(state) {
 
 function addStudent() {
     if (!editMode) return;
-    const table = document. getElementsByTagName("tbody")[0];
+    const table = document.getElementsByTagName("tbody")[0];
     const row = table.insertRow();
+    
+    const sttCell = row.insertCell();
+    sttCell.textContent = table.rows.length; 
+    sttCell.classList.add("stt");
+
     row.insertCell().outerHTML = `<td class="student-name" contenteditable="true">Tên mới</td>`;
-    for (let i = 0; i < 9; i++) {
+
+    for (let i = 1; i <= 7; i++) {
         row.insertCell().outerHTML = `<td class="editable" contenteditable="true">0</td>`;
-    }   
+    }
+
     const inputs1 = row.querySelectorAll(".editable");
     inputs1.forEach(input => {
         input.addEventListener("focus", function () { // focus: khi đang nhận thao tác
@@ -76,3 +83,9 @@ function executeScripts() {
         oldScript.remove();
     });
 }
+function updateStudentCount() {
+    const table = document.getElementsByTagName("tbody")[0];
+    const count = table ? table.rows.length : 0;
+    document.getElementById("student-count").textContent = "Số học sinh: " + count;
+}
+updateStudentCount();
