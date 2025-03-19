@@ -144,13 +144,13 @@ button:active {
     justify-self: center;
     border: 1px solid #00FF00;
 }
-#score-container, #score-table{
+#score-container{
     overflow-y: auto;
     background-color: #22272e;
     border: 1px solid #00FF00;
     align-items: center;
     max-height:70%;
-    width:100% ;
+    width:95% ;
     padding-bottom: 35px;
     border-radius: 5px;
 }
@@ -167,19 +167,21 @@ table{
     margin: auto;   
 }
 th{
-    padding: auto;
     text-align: center;
     color:  blueviolet;
     border: 1px solid #30363d;   
 }
+#ten{width: 15%;}
 td{ 
     color:  #00FF00; text-align: center;
     border: 1px solid #30363d;
+    width: 5%;
 }
 .delamgi{
     width: 100%;
     height: 100%;
     background-image: url("140721235282360.png");
+    background-size: cover;
 }
 /* mmm */
 input{
