@@ -11,7 +11,7 @@ html,body{
     flex-wrap: wrap;
     position: fixed;
     width: 100%;
-    height: 8%;
+    height: 10%;
     top: 0;
     background-color: #161b22;
 }
@@ -35,7 +35,7 @@ html,body{
 #avatar {
     width: 100%; 
     height: 100%;
-    border: 1px solid #00FF00;
+    border: 1px solid #ffffff;
     border-radius: 50%;
     object-fit: cover;
     transition: transform 0.3s;
@@ -50,46 +50,68 @@ html,body{
     justify-content: center;
     align-items: center;
 }
+input{
+    width: 66%;
+    text-align: center;
+    font-size: 12px;
+    padding: 5px;
+}
 #password,#password1 {  
     margin-top: 3%;
-    border: 1px solid #00FF00;
+    border: 1px solid #ff58ee;
     border-radius: 6px;
     background-color:  #22272e;
-    color: #00FF00;
+    color: #16ff5c;
     outline: none;
     transition: border 0.3s ease-in-out;
 }
 #password::placeholder, #password1::placeholder {
-    color: blueviolet;
+    color: #16ff5c;
 }
 #main_menu{
     width: 64%;
     height: 60%;
+    display: inline-block;
     border-left:1px solid #30363d ;
     border-right:1px solid #30363d ;
 }
 #you ul {
     display: flex;
     gap: 5%;
-    list-style: none;
-   
+    list-style: none;  
 }
 #you ul li a {
-    color: #00FF00;
+    color: #16ff5c;
     text-decoration: none;
     font-size: 14px;
     transition: color 0.2s;
 } 
 #you ul li a:hover {
-    color: #ff58ee;
+    color: #58f9ff;
 }
 /* fff */
 .wraperlop .lop2 {
     display: flex;
+    align-items: center;
     width: 45%;
-    gap: 80%;
     background-color: #161b22; 
     border-bottom: 1px solid#30363d ;
+}
+#info-box{width: 70%;}
+#info-box ul{
+    margin-left: 10px;
+    display: flex;
+    gap: 20px;
+}
+li #icon {
+    color: #ff58ee;
+    border: none;
+    background: transparent;
+    font-size: 20px;   
+} #icon:hover{color: #16ff5c;transition: color 0.2s; }
+#video{ 
+    height: 72px;
+    object-fit: contain;
 }
 @media screen and (max-width: 900px) {
     .lop1, .lop2 {
@@ -98,10 +120,6 @@ html,body{
         min-width: 100%;
         height: 72px;
     }
-}
-#video{ 
-    height: 72px;
-    object-fit: contain;
 }
 /* mmm */
 .bos2{
@@ -116,19 +134,19 @@ button {
     width: 50px;
     height: 25px;
     background-color:  #22272e;
-    color: blueviolet;
+    color: #16ff5c;
     outline: none;
     border-radius: 6px;
     font-size: 10px;
     cursor: pointer;
     transition: background 0.2s;
-    border: 1px solid #00FF00;
+    border: 1px solid #ff58ee;
 }
 button:hover {
-    background-color: #ff58ee;
+    background-color: #000000;
 }
 button:active {
-    background-color: #ff58ee;
+    background-color: #58b1ff;
 }
 .bos1bos2{
     width: 100%;
@@ -142,20 +160,19 @@ button:active {
     width: 90%;
     height: 60%;
     justify-self: center;
-    border: 1px solid #00FF00;
-}
-#score-container{
     overflow-y: auto;
     background-color: #22272e;
-    border: 1px solid #00FF00;
+    border: 1px solid #ffffff;
     align-items: center;
     max-height:70%;
-    width:95% ;
     padding-bottom: 35px;
     border-radius: 5px;
 }
+.student-name{
+    width: 15%;
+}
 h3{
-    color: rgb(253, 173, 240) ;
+    color: #e76edb ;
     text-align: center;
     padding-top: 20px;
 }
@@ -168,12 +185,11 @@ table{
 }
 th{
     text-align: center;
-    color:  blueviolet;
+    color:  #16ff5c;
     border: 1px solid #30363d;   
 }
-#ten{width: 15%;}
 td{ 
-    color:  #00FF00; text-align: center;
+    color:  #ffffff; text-align: center;
     border: 1px solid #30363d;
     width: 5%;
 }
@@ -184,9 +200,3 @@ td{
     background-size: cover;
 }
 /* mmm */
-input{
-    width: 90%;
-    text-align: center;
-    font-size: 12px;
-    padding: 5px;
-}
