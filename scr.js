@@ -3,7 +3,7 @@ let editMode = false;
 function checkPassword(){
     const password = document.getElementById("password").value;
     if(password === "1407"){
-        document.getElementById("addHs").style.display = "inline-block"
+        document.getElementById("addHs").style.display = "inline-block";
         document.getElementById("Save").style.display = "inline-block";
         enableEditing(true);
         editMode = true;
@@ -21,14 +21,12 @@ function enableEditing(state) {
 function addStudent() {
     if (!editMode) return;
     const table = document.getElementsByTagName("tbody")[0];
-    const row = table.insertRow();
-    
+    const row = table.insertRow();   
     const sttCell = row.insertCell();
+
     sttCell.textContent = table.rows.length; 
     sttCell.classList.add("stt");
-
-    row.insertCell().outerHTML = `<td class="student-name" contenteditable="true">Tên mới</td>`;
-
+    row.insertCell().outerHTML = `<td class="student-name" class="editable" contenteditable="true" >Tên mới</td>`;
     for (let i = 1; i <= 7; i++) {
         row.insertCell().outerHTML = `<td class="editable" contenteditable="true">0</td>`;
     }
@@ -61,31 +59,69 @@ function saveData() {
     editMode = false;
 }
 // mmm
-function change(){
-
-}
 function loadContent(file, event) {
     event.preventDefault();
     fetch(file)
         .then(response => response.text()) // Đọc nội dung file con
         .then(data => {
             document.getElementById("score-container").innerHTML = data; // Chèn vào div
-            executeScripts(); // Chạy lại các script trong nội dung mới
+            
         })
-        .catch(error => console.error("Lỗi tải file:", error));
 }
 
-function executeScripts() {
-    document.querySelectorAll("#score-container script").forEach(oldScript => {
-        const newScript = document.createElement("script");
-        newScript.textContent = oldScript.textContent; // Chạy lại nội dung script
-        document.body.appendChild(newScript);
-        oldScript.remove();
-    });
+function saveData() {
+    const table = document.getElementById("scoreTable");
+    const rows = table.getElementsByTagName("tr");
+    let data = [];
+
+    for (let i = 1; i < rows.length; i++) { // Bỏ qua hàng tiêu đề
+        const cells = rows[i].getElementsByTagName("td");
+        let rowData = {
+            name: cells[1].innerText,
+            tx1: parseFloat(cells[2].innerText) || null,
+            tx2: parseFloat(cells[3].innerText) || null,
+            tx3: parseFloat(cells[4].innerText) || null,
+            tx4: parseFloat(cells[5].innerText) || null,
+            gk2: parseFloat(cells[6].innerText) || null,
+            ck2: parseFloat(cells[7].innerText) || null,
+            tk: parseFloat(cells[8].innerText) || null
+        };
+        data.push(rowData);
+    }
+
+    fetch("http://localhost:3000/save-score", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result => alert(result.message))
+    .catch(error => console.error("Lỗi:", error));
 }
-function updateStudentCount() {
-    const table = document.getElementsByTagName("tbody")[0];
-    const count = table ? table.rows.length : 0;
-    document.getElementById("student-count").textContent = "Số học sinh: " + count;
+function loadStudents() {
+    fetch("http://localhost:3000/students")
+        .then(response => response.json())
+        .then(data => {
+            const table = document.getElementById("scoreTable").getElementsByTagName("tbody")[0];
+            table.innerHTML = ""; // Xóa dữ liệu cũ trước khi tải lại
+
+            data.forEach((student, index) => {
+                const row = table.insertRow();
+                row.insertCell().textContent = index + 1; // STT
+                row.insertCell().textContent = student.name;
+                row.insertCell().textContent = student.tx1;
+                row.insertCell().textContent = student.tx2;
+                row.insertCell().textContent = student.tx3;
+                row.insertCell().textContent = student.tx4;
+                row.insertCell().textContent = student.gk2;
+                row.insertCell().textContent = student.ck2;
+                row.insertCell().textContent = student.tk;
+            });
+        })
+        .catch(error => console.error("Lỗi khi tải dữ liệu:", error));
 }
-updateStudentCount();
+
+// Gọi hàm này khi trang web load xong
+document.addEventListener("DOMContentLoaded", loadStudents);
+
+
