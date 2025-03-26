@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>http//:vcli2-1407_tabletp.cc</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="scr.js" defer></script>
 </head>
 <body>
@@ -39,6 +40,24 @@
         <!-- uuu -->
         <div class="lop2">       
             <div id="info-box">
+                <ul style="list-style-type: none;">
+                    <li><a href="#" id="icon"><i class="fa-solid fa-user-secret"></i></a> </li>
+                    <li><a href="#" id="icon"><i class="fa-solid fa-microchip"></i></a></li> 
+                    <li><a href="#" id="icon"><i class="fa-solid fa-bug"></i></a> </li>         
+                    <!-- <a id="icon"><i class="fa-solid fa-dragon"></i></a> -->
+                    <!-- <a id="icon"><i class="fa-solid fa-gear"></i></a> -->
+                    <!-- <a id="icon"><i class="fa-solid fa-home"></i></a>  -->
+                    <!-- <a id="icon"><i class="fa-solid fa-wifi"></i></a>  -->
+                    <!-- <a id="icon"><i class="fa-solid fa-robot"></i></a> -->
+                    <!-- <a id="icon"><i class="fa-solid fa-mask"></i></a> -->
+                    <li><a href="#" id="icon"><i class="fa-solid fa-database"></i></a> </li>
+                    <li><a href="#" id="icon"><i class="fa-solid fa-code"></i></a></li>
+                    <li><a href="#" id="icon"><i class="fa-solid fa-terminal"></i></a></li>
+                    <li><a href="#" id="icon"><i class="fa-solid fa-skull"></i></a> </li>
+                    <li><a href="#" id="icon"><i class="fa-solid fa-key"></i></a>  </li>
+                    <li><a href="#" id="icon"><i class="fa-solid fa-lock"></i></a></li>    
+                </ul>
+                
             </div>
             <video id="video" autoplay muted loop playsinline>
                 <source src="hoathoaweb.mp4">
@@ -49,22 +68,21 @@
     <!-- mmm -->
     <div class="bos2">
         <form action="" style="justify-self: center; width: 60%; height: 50%;">
-            <h4 style="color: blueviolet; justify-self: center;">~ ĐÁNH GIÁ CHUNG ~</h4>
+            <h4 style="color: #ff58ee; justify-self: center;">~ ĐÁNH GIÁ CHUNG ~</h4>
             <textarea id="comment"
                 style="background-color: #22272e; 
                 width: 100%; height:100%;
-                border: 1px solid #00FF00; 
+                border: 1px solid #ffffff; 
                 outline: none; color: blueviolet;
                 margin-bottom: 10px;" placeholder="Nhập đánh giá...">
             </textarea>
         </form>
     </div>
-
     <!-- mmm -->
     </br></br>
    <div id="score-container">
      <h3> ĐIỂM TOÁN</h3>      
-        <hr style="width: 50%;height: 3px; background-color: rgb(218, 193, 242);
+        <hr style="width: 50%;height: 3px; background-color: #f691ec;
         border-radius:10px;"> </br></br>
         <table id="scoreTable">
             <thead>
@@ -84,7 +102,7 @@
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td id="ten">NOIR-1407</td>
+                    <td contenteditable="false" class="editable" id="ten">NOIR-1407</td>
                     <td contenteditable="false" class="editable">9.9</td>
                     <td contenteditable="false" class="editable">9.9</td>  
                     <td contenteditable="false" class="editable">9.9</td>
@@ -97,7 +115,7 @@
         <!-- fff -->
         </table>
     </div>
-    <button id="Save" class="hidden" onclick="saveData()">SAVE</button>
+    <a id="Save" class="hidden" onclick="saveData()">SAVE</a>
     </br></br>
     <!-- mmm -->
     <div class="delamgi">
