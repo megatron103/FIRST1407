@@ -13,7 +13,6 @@ html,body{
     width: 100%;
     height: 10%;
     top: 0;
-    background-color: #161b22;
 }
 /* fff */
 .wraperlop .lop1 {
@@ -21,7 +20,7 @@ html,body{
     width: 55%;
     align-items: center;
     justify-content: space-between;
-    background-color: #161b22; 
+    background-color: #1a222e; 
     border-bottom: 1px solid #30363d;
 }
 .Khung{ 
@@ -58,15 +57,15 @@ input{
 }
 #password,#password1 {  
     margin-top: 3%;
-    border: 1px solid #ff58ee;
+    border: 1px solid #ffffff;
     border-radius: 6px;
     background-color:  #22272e;
-    color: #16ff5c;
+    color: #b0c9e2;
     outline: none;
     transition: border 0.3s ease-in-out;
 }
 #password::placeholder, #password1::placeholder {
-    color: #16ff5c;
+    color: #b0c9e2;
 }
 #main_menu{
     width: 64%;
@@ -81,20 +80,20 @@ input{
     list-style: none;  
 }
 #you ul li a {
-    color: #16ff5c;
+    color: #ffffff;
     text-decoration: none;
     font-size: 14px;
     transition: color 0.2s;
 } 
 #you ul li a:hover {
-    color: #58f9ff;
+    color: #ff58ee;
 }
 /* fff */
 .wraperlop .lop2 {
     display: flex;
     align-items: center;
     width: 45%;
-    background-color: #161b22; 
+    background-color: #1a222e; 
     border-bottom: 1px solid#30363d ;
 }
 #info-box{width: 70%;}
@@ -104,7 +103,7 @@ input{
     gap: 20px;
 }
 li #icon {
-    color: #ff58ee;
+    color: #b0c9e2;
     border: none;
     background: transparent;
     font-size: 20px;   
@@ -134,19 +133,19 @@ button {
     width: 50px;
     height: 25px;
     background-color:  #22272e;
-    color: #16ff5c;
+    color: #b0c9e2;
     outline: none;
     border-radius: 6px;
     font-size: 10px;
     cursor: pointer;
     transition: background 0.2s;
-    border: 1px solid #ff58ee;
+    border: 1px solid #ffffff;
 }
 button:hover {
     background-color: #000000;
 }
 button:active {
-    background-color: #58b1ff;
+    background-color: #000000;
 }
 .bos1bos2{
     width: 100%;
@@ -162,22 +161,22 @@ button:active {
     justify-self: center;
     overflow-y: auto;
     background-color: #22272e;
-    border: 1px solid #ffffff;
+    /* border: 1px solid #ffffff; */
     align-items: center;
     max-height:70%;
     padding-bottom: 35px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .student-name{
     width: 15%;
 }
 h3{
-    color: #e76edb ;
+    color: #ffffff ;
     text-align: center;
     padding-top: 20px;
 }
 table{
-    border:1px solid rgb(253, 173, 240);
+    border:1px solid rgb(255, 255, 255);
     width: 90%;
     display: center ;
     border-collapse: collapse;
@@ -185,7 +184,7 @@ table{
 }
 th{
     text-align: center;
-    color:  #16ff5c;
+    color:  #b0c9e2;
     border: 1px solid #30363d;   
 }
 td{ 
